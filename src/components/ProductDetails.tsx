@@ -22,7 +22,7 @@ interface ProductImage {
   const SimilarProductCard = ({ product }: SimilarProductProps) => {
     return (
       <Link href={`/product/${product.slug}`} className="block">
-        <div className="bg-white rounded-lg overflow-hidden relative hover:shadow-lg transition duration-300 ease-in-out">
+        <div className="bg-white rounded-lg overflow-hidden relative hover:scale-105  transition duration-300 ease-in-out">
           <Image
             src={product.image}
             alt={product.name}

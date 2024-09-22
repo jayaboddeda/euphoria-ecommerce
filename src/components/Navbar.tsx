@@ -311,7 +311,34 @@ export default function Navbar() {
         
         <div className="flex items-center space-x-4">
         <div className="hidden md:block w-64">
-            <SearchComponent />
+        <div className="relative">
+      <Input
+        type="search"
+        placeholder="Search products..."
+        value={searchQuery}
+        onChange={handleSearchChange}
+        ref={searchInputRef}
+        className="w-full bg-gray-100 text-black pl-10 pr-4 py-2 border-0"
+      />
+      <SearchIcon />
+      {showSuggestions && searchResults.length > 0 && (
+        <div className="absolute bg-white shadow-lg mt-1 w-full max-h-56 overflow-auto z-10">
+          {searchResults.map((product) => (
+            <div
+              key={product._id}
+              className="flex items-center px-4 py-2 hover:bg-gray-100 cursor-pointer"
+              onClick={() => handleSelectProduct(product.slug)}
+            >
+              <Image src={product.image} alt={product.name} width={50} height={50} />
+              <div className="ml-4">
+                <p className="font-semibold">{product.name}</p>
+                <p className="text-sm text-gray-500">${product.price}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      )}
+    </div>
           </div>
           
           <Sheet open={isWishlistOpen} onOpenChange={setIsWishlistOpen}>
@@ -393,7 +420,34 @@ export default function Navbar() {
             </SheetTrigger>
             <SheetContent  side="left" className="w-[300px] sm:w-[400px] bg-white">
               <nav className="flex flex-col space-y-4 mt-8">
-              <SearchComponent />
+              <div className="relative">
+      <Input
+        type="search"
+        placeholder="Search products..."
+        value={searchQuery}
+        onChange={handleSearchChange}
+        ref={searchInputRef}
+        className="w-full bg-gray-100 text-black pl-10 pr-4 py-2 border-0"
+      />
+      <SearchIcon />
+      {showSuggestions && searchResults.length > 0 && (
+        <div className="absolute bg-white shadow-lg mt-1 w-full max-h-56 overflow-auto z-10">
+          {searchResults.map((product) => (
+            <div
+              key={product._id}
+              className="flex items-center px-4 py-2 hover:bg-gray-100 cursor-pointer"
+              onClick={() => handleSelectProduct(product.slug)}
+            >
+              <Image src={product.image} alt={product.name} width={50} height={50} />
+              <div className="ml-4">
+                <p className="font-semibold">{product.name}</p>
+                <p className="text-sm text-gray-500">${product.price}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      )}
+    </div>
                 {navItems.map((item) => (
                   <Link
                     key={item}
