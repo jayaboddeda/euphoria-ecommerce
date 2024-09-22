@@ -487,7 +487,7 @@ export default function ProductListing() {
       <Link key={product._id} href={`/product/${product.slug}`} className="block">
                 <div key={product._id} className="bg-white rounded-lg overflow-hidden relative transform transition-transform duration-300 hover:scale-105">
                   <Image
-                    src={process.env.NEXT_PUBLIC_API_URL + product.image}
+                    src={ product.image}
                     alt={product.name}
                     className="rounded-lg w-full object-cover"
                     width={100}
