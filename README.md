@@ -1,6 +1,6 @@
 ## README
 
-# Project Name
+# Euphoria
 
 This project is an e-commerce application built using modern web technologies for an efficient and smooth user experience. Below is a detailed overview of the technologies used and the core features implemented in the project.
 
