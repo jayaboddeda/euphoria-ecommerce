@@ -11,9 +11,7 @@ interface ProductImage {
   alt: string
 }
 
-interface ProductPageProps {
-    product: IProduct;
-  }
+
 
   interface SimilarProductProps {
     product: IProduct;

@@ -17,7 +17,7 @@ export default function Footer() {
               <li>Contact Us</li>
               <li>Track Order</li>
               <li>Returns & Refunds</li>
-              <li>FAQ's</li>
+              <li>FAQ&apos;s</li>
               <li>Career</li>
             </ul>
           </div>

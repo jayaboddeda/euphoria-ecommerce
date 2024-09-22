@@ -3,10 +3,7 @@
 import { useState, useEffect, useCallback } from 'react'
 import { useRouter } from 'next/navigation'
 import Image from 'next/image'
-// import { Slider } from "@/components/ui/slider"
-import { Checkbox } from "@/components/ui/checkbox"
 import { cn } from "@/lib/utils"
-import { HeartIcon } from './Navbar'
 import { Button } from "@/components/ui/button"
 import { useToast } from "@/hooks/use-toast"
 import * as Slider from "@radix-ui/react-slider";
@@ -446,7 +443,7 @@ export default function ProductListing() {
         <div className="w-full md:w-3/4 py-8 px-4 md:px-0">
           {/* Header and Filter Buttons */}
           <div className='flex justify-between items-center mb-8'>
-            <h4 className="text-xl font-medium">Women's Clothing</h4>
+            <h4 className="text-xl font-medium">Women&apos;s Clothing</h4>
             <div className="flex items-center">
               {['New', 'Recommended'].map((filter) => (
                 <button
@@ -487,7 +484,7 @@ export default function ProductListing() {
 ) : (
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
               {products.map((product) => (
-      <Link href={`/product/${product.slug}`} className="block">
+      <Link key={product._id} href={`/product/${product.slug}`} className="block">
                 <div key={product._id} className="bg-white rounded-lg overflow-hidden relative transform transition-transform duration-300 hover:scale-105">
                   <Image
                     src={process.env.NEXT_PUBLIC_API_URL + product.image}
