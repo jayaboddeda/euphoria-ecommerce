@@ -175,7 +175,7 @@ export default function ProductPage({ product, similarProducts }: { product: IPr
           <div>
             <h2 className="font-medium mb-2">Select Size</h2>
             <div className="flex space-x-2">
-              {sizes.map((size) => (
+              {product?.sizes.map((size) => (
                 <Button 
                   key={size} 
                   variant={selectedSize === size ? "default" : "outline"} 
@@ -190,7 +190,7 @@ export default function ProductPage({ product, similarProducts }: { product: IPr
           <div>
             <h2 className="font-medium mb-2">Colours Available</h2>
             <div className="flex space-x-2">
-              {colors.map((color) => (
+              {product?.colors.map((color) => (
                 <Button
                   key={color}
                   variant="outline"
